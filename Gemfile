@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'dotenv-rails'
 
 gem 'annotate'
+gem 'better_errors'
+gem 'binding_of_caller'
 gem 'faker'
 gem 'hamlit'
 
