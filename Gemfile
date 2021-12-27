@@ -25,6 +25,7 @@ gem 'dotenv-rails'
 
 gem 'hamlit'
 gem 'faker'
+gem 'annotate'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
