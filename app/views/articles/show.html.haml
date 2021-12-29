@@ -3,11 +3,11 @@
   .article_detail
     = image_tag 'default-avatar.png'
     %div
-      %p cohki0305
+      %p= @article.author_name
       %p= @article.display_created_at
     .article_detail_actions
       .dropdown
-        - if user_signed_in?
+        - if user_signed_in? && current_user.has_written?(@article)
           = image_tag 'actions.svg', class: 'dropbtn'
           .dropdown-content.mini
             = link_to '編集する', edit_article_path(@article)
