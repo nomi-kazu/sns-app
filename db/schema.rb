@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_29_124025) do
+ActiveRecord::Schema.define(version: 2022_01_01_044851) do
 
   create_table "articles", charset: "utf8mb4", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -27,6 +27,18 @@ ActiveRecord::Schema.define(version: 2021_12_29_124025) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["article_id"], name: "index_comments_on_article_id"
+  end
+
+  create_table "profiles", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "nickname"
+    t.text "introduction"
+    t.integer "gender"
+    t.date "birthday"
+    t.boolean "subscribed", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
