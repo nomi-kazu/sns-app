@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'articles#index'
   resources :articles do
-    resources :comments, only: [:new, :create]
+    resources :comments, only: %i[new create]
   end
+
+  resource :profile, only: %i[show edit update]
 end
