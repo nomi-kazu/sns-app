@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_01_102023) do
+ActiveRecord::Schema.define(version: 2022_01_03_141716) do
+
+  create_table "action_text_rich_texts", charset: "utf8mb4", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "body", size: :long
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
+  end
 
   create_table "active_storage_attachments", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -43,7 +53,6 @@ ActiveRecord::Schema.define(version: 2022_01_01_102023) do
   create_table "articles", charset: "utf8mb4", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "title", null: false
-    t.text "content", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_articles_on_user_id"
