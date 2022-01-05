@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'dotenv-rails'
 
 gem 'annotate'
+gem 'active_decorator'
 gem 'better_errors'
 gem 'binding_of_caller'
 gem 'devise'
